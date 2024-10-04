@@ -16,7 +16,7 @@ public class KnightTest {
     }
 
     @Test
-    public void testAddAmmunition() {
+    public void method1_testAdding() {
         Ammunition spear = new Weapon("spear", 349.05, 2.1, 28.5);
         Ammunition helmet = new Helmet("helmet", 1377.0, 15.4, 23.0);
         Ammunition boots = new Armor("boots", 864.2, 7.4, 12.5);
@@ -28,7 +28,7 @@ public class KnightTest {
     }
 
     @Test
-    public void testAddAmmunitionWithNegativeValues() {
+    public void method1_testAdding_whenNegativeValues() {
         assertThrows(IllegalArgumentException.class, () -> {
             knight.addAmmunition(new Shield("shield", -100.00, 2.1, 28.5));
         });
@@ -42,7 +42,7 @@ public class KnightTest {
     }
 
     @Test
-    public void testGetAllInfo() {
+    public void method2_testDataOutput() {
         knight.addAmmunition(new Armor("chest plate", 1500.00, 32.04, 123.55));
         knight.addAmmunition(new Helmet("helmet", 209.85, 7.45, 5.05));
         knight.addAmmunition(new Shield("shield", 98.30, 15.67, 3.33));
@@ -58,7 +58,7 @@ public class KnightTest {
     }
 
     @Test
-    public void testCalculatePrice() {
+    public void method3_testCalculatePrice() {
         Ammunition spear = new Weapon("spear", 567.05, 2.1, 28.5);
         Ammunition helmet = new Helmet("helmet", 2439.0, 15.4, 23.0);
         Ammunition boots = new Armor("boots", 864.2, 7.4, 12.5);
@@ -70,7 +70,7 @@ public class KnightTest {
     }
 
     @Test
-    public void testWeightSort() {
+    public void method4_testWeightSort() {
         knight.addAmmunition(new Armor("cuirass", 1435.00, 25.56, 100.00));
         knight.addAmmunition(new Helmet("helmet", 209.85, 7.45, 35.05));
         knight.addAmmunition(new Shield("shield", 56.90, 11.05, 3.33));
@@ -85,7 +85,7 @@ public class KnightTest {
     }
 
     @Test
-    public void testFindByPrice() {
+    public void method5_testFindByPrice() {
         knight.addAmmunition(new Armor("cuirass", 1200.50, 20.0, 90.0));
         knight.addAmmunition(new Helmet("helmet", 300.75, 5.0, 4.5));
         knight.addAmmunition(new Shield("shield", 75.30, 10.5, 2.8));
@@ -104,7 +104,7 @@ public class KnightTest {
 
 
     @Test
-    public void testFindAmmunitionByPrice() {
+    public void method6_testFindAmmunitionByPrice() {
         knight.addAmmunition(new Weapon("knife", 2900.54, 1.1, 23.9));
         knight.addAmmunition(new Helmet("helmet", 1263.85, 7.45, 5.05));
         knight.addAmmunition(new Shield("shield", 177.77, 11.05, 3.33));
@@ -128,7 +128,7 @@ public class KnightTest {
     }
 
     @Test
-    public void testFindAmmunitionByPrice_NegativeValue() {
+    public void method6_testFindAmmunitionByPrice_whenNegativeValue() {
         knight.addAmmunition(new Weapon("knife", 2900.54, 1.1, 23.9));
         knight.addAmmunition(new Helmet("helmet", 1263.85, 7.45, 5.05));
         knight.addAmmunition(new Shield("shield", 177.77, 11.05, 3.33));
@@ -142,7 +142,7 @@ public class KnightTest {
     }
 
     @Test
-    public void testFindAmmunitionByPrice_NonNumericValue() {
+    public void method6_testFindAmmunitionByPrice_whenInvalidInput() {
         knight.addAmmunition(new Weapon("knife", 2900.54, 1.1, 23.9));
         knight.addAmmunition(new Helmet("helmet", 1263.85, 7.45, 5.05));
         knight.addAmmunition(new Shield("shield", 177.77, 11.05, 3.33));
@@ -156,7 +156,7 @@ public class KnightTest {
     }
 
     @Test
-    public void testFindAmmunitionByPrice_MinPriceGreaterThanMax() {
+    public void method6_testFindAmmunitionByPrice_whenOutOfRange() {
         knight.addAmmunition(new Weapon("knife", 2900.54, 1.1, 23.9));
         knight.addAmmunition(new Helmet("helmet", 1263.85, 7.45, 5.05));
         knight.addAmmunition(new Shield("shield", 177.77, 11.05, 3.33));

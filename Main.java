@@ -57,10 +57,6 @@ class Armor extends Ammunition {
     setDefense(defense);
 }
 
-    public double getDefense() {
-        return defense;
-    }
-
     public void setDefense(double defense) {
         if (defense < 0) {
             throw new IllegalArgumentException("Defense must be non-negative.");
@@ -80,10 +76,6 @@ class Weapon extends Ammunition {
         super(name, price, weight);
         setDamage(damage);
 }
-
-    public double getDamage() {
-        return damage;
-    }
 
     public void setDamage(double damage) {
         if (damage < 0) {
